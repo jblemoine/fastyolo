@@ -1,3 +1,3 @@
-from .core import Video
+from .video import Video
 
 __all__ = ["Video"]

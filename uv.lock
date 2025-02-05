@@ -149,6 +149,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "mypy" },
+    { name = "nvtx" },
     { name = "pytest" },
     { name = "ruff" },
 ]
@@ -162,6 +163,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "mypy", specifier = ">=1.15.0" },
+    { name = "nvtx", specifier = ">=0.2.10" },
     { name = "pytest", specifier = ">=7.4.0" },
     { name = "ruff", specifier = ">=0.9.4" },
 ]
@@ -600,6 +602,18 @@ version = "12.4.127"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/20/199b8713428322a2f22b722c62b8cc278cc53dffa9705d744484b5035ee9/nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl", hash = "sha256:781e950d9b9f60d8241ccea575b32f5105a5baf4c2351cab5256a24869f12a1a", size = 99144 },
+]
+
+[[package]]
+name = "nvtx"
+version = "0.2.10"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e6/44/9ce1cc9a47273a91742a86c38b9c4a6d80352175630eb6e1096d85ec17fc/nvtx-0.2.10.tar.gz", hash = "sha256:58b89cd69079fda1ceef8441eec5c5c189d6a1ff94c090a3afe03aedd0bbd140", size = 13360 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9f/41/45a14b92a5233fb4317a22a29dd00b2a27471952f547902dabaf1c13c55a/nvtx-0.2.10-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:828a1d17e53577adf3e24e93b92d68eabcb316b293ce64c5aa03776c1577511c", size = 652785 },
+    { url = "https://files.pythonhosted.org/packages/23/76/1cd74fc0db064da4e6ef17f5cbae76fd3ec020b9505cd9816450e0769d51/nvtx-0.2.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:71a1a641d4db137da8166d689d835a42f92b97cf2658ea069cbed162b8c5dd79", size = 653596 },
+    { url = "https://files.pythonhosted.org/packages/8b/dc/6d033ca79b9680b5339eb582122d201a5c1e5d71c41db6c3cbce966c5ae7/nvtx-0.2.10-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3232fd776dbb9f4ee7735e251f5e844bc4c0bd614521a15abba666b15b12e6e3", size = 691924 },
+    { url = "https://files.pythonhosted.org/packages/53/6d/81a1da3a1e7b216412f768add33799a8f73de906cd78118d0e57c82c951c/nvtx-0.2.10-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:552ee32cadd7a8205833e157f3e161670200b213eb2816fd8631182c3e97c0dc", size = 695537 },
 ]
 
 [[package]]

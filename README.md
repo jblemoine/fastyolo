@@ -56,3 +56,4 @@ for batch in video:
 - [ ] Optimize Yolo models including post processing
 - [ ] Add support for other tasks
 - [ ] Add GPU-accelerated video decoding using [torchcodec](https://github.com/pytorch/torchcodec) and other backends
+- [ ] Add comprehensive benchmarks
