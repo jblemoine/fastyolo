@@ -1,3 +1,3 @@
-from .core import FastYolo
+from .core import Video
 
-__all__ = ["FastYolo"]
+__all__ = ["Video"]

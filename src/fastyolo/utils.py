@@ -1,9 +1,9 @@
-import subprocess
 import logging
+import subprocess
 
 
-def rgb_to_hex(rgb: tuple[int, int, int]) -> str:
-    return f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}"
+def rgb_to_hex(r: int, g: int, b: int) -> str:
+    return f"#{r:02x}{g:02x}{b:02x}"
 
 
 def run_command(command: list[str]) -> None:
@@ -50,3 +50,28 @@ def get_logger(name: str, level: str = "INFO"):
     logger.setLevel(getattr(logging, level.upper()))
 
     return logger
+
+
+def check_ffmpeg_installed() -> None:
+    """
+    Check if ffmpeg is installed and accessible from PATH.
+
+    Raises:
+        RuntimeError: If ffmpeg is not found or not working properly
+    """
+    try:
+        # Try to run ffmpeg -version
+        result = subprocess.run(["ffmpeg", "-version"], capture_output=True, text=True)
+
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"ffmpeg is installed but not working properly. Error: {result.stderr}"
+            ) from None
+
+    except FileNotFoundError as err:
+        raise RuntimeError(
+            "ffmpeg not found. Please install ffmpeg:\n"
+            "- Ubuntu/Debian: sudo apt-get install ffmpeg\n"
+            "- MacOS: brew install ffmpeg\n"
+            "- Windows: Download from https://ffmpeg.org/download.html"
+        ) from err

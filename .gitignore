@@ -17,10 +17,10 @@ wheels/
 .coverage
 coverage.xml
 htmlcov/
+tests/data/
 
 # Linting and formatting
 .ruff_cache/
-.mypy_cache/
 
 # IDE
 .vscode/
@@ -32,8 +32,12 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# videos
-videos/
-
 # models
 models/
+*.pt
+
+# cursor
+.cursorrules
+
+# mypy
+.mypy_cache/
