@@ -3,36 +3,38 @@ import subprocess
 
 
 def rgb_to_hex(r: int, g: int, b: int) -> str:
+    """Convert RGB color values to hexadecimal color code.
+
+    Parameters
+    ----------
+    r : int
+        Red color value (0-255)
+    g : int
+        Green color value (0-255)
+    b : int
+        Blue color value (0-255)
+
+    Returns
+    -------
+    str
+        Hexadecimal color code in format '#RRGGBB'
+    """
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def run_command(command: list[str]) -> None:
-    """
-    Run a shell command and raise an error if it fails.
+def setup_logger(name: str, level: str = "INFO"):
+    """Set up and return a simple console logger.
 
-    Args:
-        command: List of command arguments to execute
+    Parameters
+    ----------
+    name : str
+        Name for the logger
+    level : str, optional
+        Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL), by default "INFO"
 
-    Raises:
-        RuntimeError: If the command fails, with stderr output in the error message
-    """
-    result = subprocess.run(command, capture_output=True, text=True)
-
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"Command {' '.join(command)} failed with error:\n{result.stderr}"
-        )
-
-
-def get_logger(name: str, level: str = "INFO"):
-    """
-    Set up and return a simple console logger.
-
-    Args:
-        name: Name for the logger
-        level: Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-
-    Returns:
+    Returns
+    -------
+    logging.Logger
         Logger instance configured with console output
     """
 
@@ -53,11 +55,12 @@ def get_logger(name: str, level: str = "INFO"):
 
 
 def check_ffmpeg_installed() -> None:
-    """
-    Check if ffmpeg is installed and accessible from PATH.
+    """Check if ffmpeg is installed and accessible from PATH.
 
-    Raises:
-        RuntimeError: If ffmpeg is not found or not working properly
+    Raises
+    ------
+    RuntimeError
+        If ffmpeg is not found or not working properly
     """
     try:
         # Try to run ffmpeg -version

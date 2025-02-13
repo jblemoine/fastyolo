@@ -11,6 +11,8 @@ wheels/
 # Environment management
 .python-version
 .uv/
+uv.lock
+
 
 # Testing
 .pytest_cache/
